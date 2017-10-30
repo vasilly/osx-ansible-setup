@@ -30,11 +30,16 @@ You will need to input your password in order to install pip and ansible.
 
 ## Roles
 
-0. install casks
-  - ...
+0. install software
+  modify *osx-ansible-setup/vars/software-to-install.yml* to add software/packages
+  you wish to install.  Atom packages are installed with apm. Other software,
+  is either installed with brew, brew/cask, or npm.  You can search for software you wish to install at
+  *https://caskroom.github.io/search* or *http://brewformulas.org/*
 
 0. dev-tools
-  - iTerm2
+  - Atom packages
+  - Node
+  - npm packages
   - Sublime (Adds a symlink to open files and folders with 'sublime' from the terminal)
   - VirtualBox
   - Vagrant
