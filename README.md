@@ -1,5 +1,6 @@
 # osx-setup-ansible
 Setting up a Mac with a single script.
+
 Bulk taken from
 https://github.com/pameck/osx-setup-ansible/blob/master/setup.sh
 with refinements.
@@ -13,7 +14,7 @@ Update macOS to latest
 ## Install
 Download and unzip this repository to an empty computer
 ```bash
-$ curl -sL https://github.com/pameck/osx-setup-ansible/archive/master.tar.gz | tar xz
+$ curl -sL https://github.com/vasilly/osx-ansible-setup/archive/master.tar.gz | tar xz
 ```
 
 Go to the folder of the repository
