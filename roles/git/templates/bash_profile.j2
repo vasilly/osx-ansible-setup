@@ -1,0 +1,55 @@
+# Git Alias
+alias gs='git status'
+alias gpr='git pull --rebase'
+alias push='git push'
+alias gds='git diff --staged'
+alias gap='git add -p'
+alias gcm='git commit -m'
+alias oneline='git log --oneline'
+# Other Alias
+alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias ansibleedit='atom ~/osx-setup-ansible-master'
+alias bashedit='atom ~/.bash_profile'
+alias bashsource='. ~/.bash_profile'
+alias editproject='atom ~/projects/reduxApp'
+# activate nvm.  needs terminal to reopen for source in all tabs.
+# reopen shell
+[[ -s $HOME/.nvm/nvm.sh ]] && . $HOME/.nvm/nvm.sh  # This loads NVM.
+source /usr/local/etc/profile.d/z.sh
+# update bash prompt the way I like it
+BOLD="\e[1m"
+RED="\e[31m"
+GREEN="\e[32m"
+BLUE="\e[34m"
+OFF="\e[0m"
+# PROMPT="[\u@\h ${BLUE}\W${OFF}"
+export PS1="${BOLD}${BLUE}\w${OFF}\n\$ "
+
+# -- disallow options, so -dirName, --dirName is valid
+# -P allow symbol links
+# "$1" allow spaces in filename
+dr() {
+    mkdir -p -- "$1" &&
+      cd -P -- "$1"
+}
+
+dirtree() {
+  if [ $# -lt 1 ]; then
+    echo "Missing argument";
+    return 1;
+  fi
+  for f in "$@"; do
+    if [[ "$f" == *.* ]]
+    then
+      # it is a file: *.js, *.html, *.css etc...
+      # "$(dirname -- "$f")"    just the file path
+      mkdir -p -- "$(dirname -- "$f")"
+      touch -- "$f"
+    else
+      # it is a directory:
+      mkdir -p "$f"
+    fi
+  done
+}
+
+mkcd() { mkdir -p "$1" && cd "$1"; }

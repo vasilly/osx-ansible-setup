@@ -1,0 +1,146 @@
+---
+
+# re-installs every atom package on every run
+atom_packages:
+  - atom-beautify
+  - file-icons
+  - linter-eslint
+  - pigments
+  - platformio-ide-terminal
+  - prettier
+  - sort-lines
+  - jumpy
+  - atom-easy-jsdoc
+
+  # -------------
+  # not installed
+  # -------------
+  # - atom-material-syntax
+  # - atom-material-ui
+  # - atom-ternjs
+  # - auto-detect-indentation
+  # - auto-update-packages
+  # - autoclose-html
+  # - autocomplete-modules
+  # - block-cursor
+  # - double-tag
+  # - editorconfig
+  # - emmet
+  # - file-icons
+  # - formatter-json
+  # - formatter-tidy
+  # - highlight-line
+  # - highlight-selected
+  # - js-hyperclick
+  # - language-babel
+  # - less-than-slash
+  # - linter
+  # - linter-eslint
+  # - linter-json-lint
+  # - linter-stylelint
+  # - merge-conflicts
+  # - nice-index
+  # - open-recent
+  # - pigments
+  # - project-manager
+  # - project-view
+  # - react
+  # - script
+  # - seti-syntax
+  # - sort-lines
+  # - split-diff
+  # - sync-settings
+  # - terminal-plus
+  # - todo-show
+  # - tree-view-git-branch
+
+# homebrew_installed_packages:
+#   - ansible
+#   - dockutil
+#   - git
+#   - go
+#   - gpg
+#   - python
+#   - sqlite
+#   - mcrypt
+#   - mysql
+#   - npm
+#   - nvm
+#   - php56
+#   - php56-mcrypt
+#   - php56-xdebug
+#   - ssh-copy-id
+#   - ios-sim
+#   - readline
+#   - openssl
+#   - drush
+#   - wget
+
+# homebrew_taps:
+#   - caskroom/cask
+#   - caskroom/versions
+#   - homebrew/binary
+#   - homebrew/dupes
+#   - homebrew/php
+#   - homebrew/versions
+
+homebrew_cask_appdir: /Applications
+homebrew_cask_apps:
+  - android-file-transfer
+  - atom
+  - diffmerge
+  - docker
+  - filezilla
+  - firefox
+  - firefoxdeveloperedition
+  - flux
+  - gitkraken
+  - google-chrome
+  - hyper #hyperterm
+  - iterm2
+  - kindle
+  - postman
+  - robo-3t #former robomongo
+  - sequel-pro
+  - skype
+  - slack
+  - sourcetree
+  - spectacle
+  - spotify
+  - sublime-text
+  - vagrant
+  - virtualbox
+  - visual-studio
+  - visual-studio-code
+  - vlc
+  # - 4k-video-downloader
+  # - adobe-creative-cloud
+  # - alfred
+  # - appcleaner
+  # - ccleaner
+  # - dashlane #Password Manager
+  # - dropbox
+  # - google-drive
+  # - google-hangouts
+  # - google-hangouts
+  # - gpgtools
+  # - jetbrains-toolbox
+  # - kodi
+  # - sketch
+  # - sketchbook #drawimg
+  # - sketchpacks
+  # - skitch
+  # - steam
+  # - teamviewer
+  # - tower
+  # - transmit
+
+brew_utils:
+  - heroku-toolbelt # regular updates needed: $ heroku update
+  - mongodb
+  - tree
+  - z # - autojump
+
+npm_modules:
+  - create-react-app
+  - nodemon

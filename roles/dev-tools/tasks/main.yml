@@ -1,0 +1,6 @@
+- include: node.yml
+- include: npm_modules_install.yml
+- include: sublime.yml
+- include: homebrew_utils.yml
+- include: homebrew_cask_apps.yml # skip if no new apps.
+- include: atom_package_install.yml # re-installs all packages

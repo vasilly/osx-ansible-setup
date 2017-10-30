@@ -1,0 +1,26 @@
+- name: Install git
+  homebrew: name=git state=present
+
+- name: Add global git config settings
+  template: src=templates/git_config.j2 dest={{home_dir}}/.gitconfig
+
+- name: Create bash_profile if it does not exist
+  file: state=touch path={{home_dir}}/.bash_profile
+
+- name: Create bin if it does not exist
+  file: state=directory path={{home_dir}}/bin
+
+- name: Add aliases to bash_profile
+  blockinfile:
+    dest: "{{home_dir}}/.bash_profile"
+    content: |
+      #Git Alias
+      alias gs='git status'
+      alias gpr='git pull --rebase'
+      alias push='git push'
+      alias gds='git diff --staged'
+      alias gap='git add -p'
+      alias gcm='git commit -m'
+      alias oneline='git log --oneline'
+      #Other Alias
+      alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'

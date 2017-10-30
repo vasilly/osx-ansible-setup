@@ -1,0 +1,7 @@
+  # Cask.
+- name: Install configured cask applications.
+  homebrew_cask:
+    name: "{{ item }}"
+    state: present
+    install_options: "appdir={{ homebrew_cask_appdir }}"
+  with_items: "{{ homebrew_cask_apps }}"

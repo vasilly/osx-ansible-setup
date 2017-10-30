@@ -1,0 +1,33 @@
+- name: Install base utilities
+  homebrew:
+    name: "{{ item }}"
+    state: latest
+    #state: latest will update any installed utilities
+    #state: present skips updating
+
+  with_items: "{{ brew_utils }}"
+
+# https://github.com/daemonza/setupmac/blob/master/roles/setup/tasks/apps.yml
+
+#
+# - name: create workspace directories
+#   file:
+#     path: "{{general.local_home}}/workspace"
+#     state: directory
+
+#
+# - name: setting up my dotfiles
+#   git:
+#     repo: https://github.com/daemonza/dotfiles.git
+#     dest: /tmp/dotfiles/
+
+# - name: ensure homebrew is updated
+#   homebrew:
+#     state: latest
+#     update_homebrew: yes
+
+# - name: Create Folder
+#   file:
+#    path: "{{project_root}}/conf"
+#    recurse: yes
+#    state: directory

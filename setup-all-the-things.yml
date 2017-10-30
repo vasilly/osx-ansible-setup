@@ -1,0 +1,29 @@
+---
+- hosts: all
+  vars:
+    home_dir: "{{ lookup('env', 'HOME') }}"
+    apps_dir: "{{ home_dir }}/Library/Application Support"
+    homebrew_cask_appdir: /Applications
+  vars_files:
+    - vars/software-to-install.yml
+  tasks:
+    - name: check if homebrew is installed
+      command: brew -v
+      register: brew_check
+
+    - name: install homebrew with curl
+      command: /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+      when: brew_check.stdout.find('command not found') > -1
+
+    - name: Install Homebrew Cask using homebrew
+      homebrew:
+       name: cask
+       state: present
+
+    - name: Tap Homebrew Cask
+      command: brew tap caskroom/versions
+
+  roles:
+      - { role: dev-tools }
+      - { role: git }
+      - { role: mac-preferences }

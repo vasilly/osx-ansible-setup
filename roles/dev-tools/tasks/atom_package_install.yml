@@ -1,0 +1,14 @@
+---
+# not working
+- name: Install atom packages
+  shell: "apm install {{ item }}"
+  with_items: "{{ atom_packages }}"
+#
+# - hosts: localhost
+#   connection: local
+  # - hosts: localhost
+  #   connection: local
+  #   gather_facts: no
+  #   sudo: no
+# roles:
+#   - hnakamur.atom-packages

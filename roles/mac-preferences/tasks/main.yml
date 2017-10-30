@@ -1,0 +1,43 @@
+- name: Enable Tab/Cancel in Mac dialogs
+  shell: defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+
+- name: Require password immediately after screen saver begins
+  shell: defaults write com.apple.screensaver askForPassword -int 1
+
+- name: Saving to disk (not to iCloud) by default
+  shell: defaults write NSGlobalDomain NSDocumentSaveNewDocumentsToCloud -bool false
+
+- name: Turn off keyboard illumination when computer is not used for 5 minutes
+  shell: defaults write com.apple.BezelServices kDimTime -int 300
+
+
+###############################################################################
+# Finder
+###############################################################################
+
+- name: Showing icons for hard drives, servers, and removable media on the desktop
+  shell: defaults write com.apple.finder ShowExternalHardDrivesOnDesktop -bool true
+
+- name: Showing all filename extensions in Finder by default
+  shell: defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+  
+- name: Show Hidden Files
+  shell: defaults write com.apple.finder AppleShowAllFiles -bool true
+
+- name: Showing status bar in Finder by default
+  shell: defaults write com.apple.finder ShowStatusBar -bool true
+
+- name: Allowing text selection in Quick Look/Preview in Finder by default
+  shell: defaults write com.apple.finder QLEnableTextSelection -bool true
+
+- name: Displaying full POSIX path as Finder window title
+  shell: defaults write com.apple.finder _FXShowPosixPathInTitle -bool true
+
+- name: Disabling the warning when changing a file extension
+  shell: defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+
+- name: Use column view in all Finder windows by default
+  shell: defaults write com.apple.finder FXPreferredViewStyle Clmv
+
+- name: Avoiding the creation of .DS_Store files on network volumes
+  shell: defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true

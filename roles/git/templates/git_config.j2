@@ -1,0 +1,17 @@
+[user]
+        name = {{ git_username }}
+        email = {{ git_useremail }}
+[alias]
+        co = checkout
+        gs = status
+        st = status
+        last = 'log -1 HEAD'
+        new = checkout -b
+[push]
+        default = simple
+[color]
+        ui = true
+[core]
+        excludesfile = {{home_dir}}/config/.gitignore_global
+[credential]
+        helper = cache        
