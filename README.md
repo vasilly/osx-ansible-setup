@@ -1,5 +1,5 @@
 # osx-setup-ansible
-Setting up a Mac with an ansible script.
+Setting up a clean Mac with an ansible script.
 
 Refined from
 https://github.com/pameck/osx-setup-ansible/blob/master/setup.sh
@@ -29,10 +29,9 @@ You will need to input your password in order to install pip and ansible.
 
 ## Roles
 
-0. install software
-  modify *osx-ansible-setup/vars/software-to-install.yml* to add software/packages
-  you wish to install.  Atom packages are installed with apm. Other software
-  is either installed with brew, brew/cask, or npm.  You can search for software you wish to install at
+0. To install software, modify the file *osx-ansible-setup/vars/software-to-install.yml*.
+Atom packages are installed with apm. Node modules are installed with npm. Other software
+  is either installed with brew or brew/cask.  You can search for software you wish to install at
   *https://caskroom.github.io/search* or *http://brewformulas.org/*
 
 0. dev-tools
@@ -53,4 +52,5 @@ You will need to input your password in order to install pip and ansible.
 
 - Source bash_profile once created
 - Import ansible galaxy playbook that checks if Atom packages are not installed, Before
-installing
+installing them.  At present, each Atom package is installed again, everytime this
+ansible script is run.
